@@ -1,0 +1,322 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Changed to a modern sans-serif font */
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6; /* Increased line-height for better readability */
+}
+
+/* Header */
+header {
+    background: #007BFF;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Sales Analysis Logo */
+.logo {
+    font-family: 'Poppins', sans-serif; /* Use a clean, bold font for the logo */
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px; /* Add slight spacing for better appearance */
+    text-transform: uppercase; /* Making logo text uppercase for a professional look */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.3s;
+    font-size: 16px; /* Adjusted font size for better balance */
+}
+
+.nav-links li a:hover {
+    color: #f8f9fa;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: #eef2f7;
+}
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px; /* Larger font size for the main heading */
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* CTA Button */
+#cta-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+#cta-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Sliding Image Section */
+.carousel-container {
+    overflow: hidden;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1100px;
+    position: relative;
+}
+
+.image-slider {
+    display: flex;
+    gap: 20px;
+    width: 200%;
+    animation: slide 15s linear infinite;
+}
+
+.image-slider img {
+    width: 250px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-slider img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;  /* Allow items to wrap on smaller screens */
+}
+
+/* Stat Box */
+.stat-box {
+    text-align: center;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+    font-family: 'Roboto', sans-serif; /* Improved font */
+    font-weight: 600;
+    color: #333;
+}
+
+.stat-box:hover {
+    transform: scale(1.05); /* Slight zoom effect when hovering */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+/* Stat Box Titles */
+.stat-box h2 {
+    color: #007BFF;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+/* Stat Box Descriptions */
+.stat-box p {
+    color: #555;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Adding icons to stat boxes */
+.stat-box .icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+/* Specific styles for each stat box */
+.total-sales .icon {
+    color: #28a745; /* Green for sales */
+}
+
+.total-revenue .icon {
+    color: #ffc107; /* Yellow for revenue */
+}
+
+.customers .icon {
+    color: #dc3545; /* Red for customers */
+}
+
+
+/* Footer */
+footer {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+/* Background blur when popup is open */
+.popup-active {
+    overflow: hidden;
+}
+
+.popup-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+/* Login Popup */
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: black;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    display: none;
+    z-index: 1000;
+}
+
+/* Close button */
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Labels for input fields */
+.login-popup label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin: 10px 0 5px;
+    color: white;
+}
+
+/* Input fields */
+.login-popup input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #222;
+    color: white;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Login Button */
+.login-popup button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.login-popup button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Footer Links */
+.popup-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.popup-footer a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.popup-footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+

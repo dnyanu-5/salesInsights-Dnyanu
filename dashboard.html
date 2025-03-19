@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#sales-data">Sales Data</a></li>
+            <li><a href="#reports">Reports</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div id="main-content">
+        <!-- Header -->
+        <header>
+            <h1>Sales Analysis Dashboard</h1>
+            <div class="user-info">
+                <span>Welcome, User!</span>
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview">
+            <div class="metrics">
+                <div class="metric-box">
+                    <h3>Total Sales</h3>
+                    <p>$500,000</p>
+                </div>
+                <div class="metric-box">
+                    <h3>Total Profit</h3>
+                    <p>$150,000</p>
+                </div>
+                <div class="metric-box">
+                    <h3>Best-Selling Product</h3>
+                    <p>Product A</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sales Data Section -->
+        <section id="sales-data">
+            <div class="filters">
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date">
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date">
+                <button onclick="filterSalesData()">Filter</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="salesChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Sales Dashboard. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
