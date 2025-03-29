@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Analysis</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -27,8 +27,6 @@
     </div>
 </div>
 
-
-
 <body>
 
     <header>
@@ -39,9 +37,17 @@
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">Reports</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href="#" id="qr-button">QR Code</a></li>
+
             </ul>
         </nav>
     </header>
+
+    <div id="qr-popup" class="qr-popup">
+        <span class="close-qr" class="close-btn"c>&times;</span>
+        <h2>Scan QR Code to View Reports</h2>
+        <img id="qr-image" src="IMG.sales/sales_QR_PNG.jpg" alt="QR Code">
+    </div> 
 
     <section class="hero">
         <h1>Unlock Insights, Boost Sales</h1>
@@ -73,8 +79,7 @@
             allowFullScreen="true">
         </iframe>
     </section>
-    
-
+                                                                            
     <div class="stats">
         <!-- Total Sales -->
         <div class="stat-box total-sales">
@@ -103,7 +108,7 @@
         <p>&copy; 2025 Sales Analysis. All rights reserved.</p>
     </footer>
 
+    <script defer src="script.js"></script>
+
 </body>
 </html>
-
-

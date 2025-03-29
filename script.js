@@ -44,6 +44,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const qrButton = document.getElementById("qr-button");  // Get the QR button
+    const qrPopup = document.getElementById("qr-popup");  // Get the popup
+    const closeQrPopup = document.getElementById("close-qr-popup");  // Close button
+
+    // Show QR popup when QR button is clicked
+    qrButton.addEventListener("click", function () {
+        qrPopup.style.display = "block"; 
+    });
+
+    // Hide QR popup when Close button is clicked
+    closeQrPopup.addEventListener("click", function () {
+        qrPopup.style.display = "none"; 
+    });
+
+    // Hide QR popup when clicking outside the QR image
+    window.addEventListener("click", function (event) {
+        if (event.target === qrPopup) {
+            qrPopup.style.display = "none";
+        }
+    });
+});
+
+
 
 
 
