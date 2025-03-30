@@ -14,7 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Number animation function
 function animateValue(id, start, end, duration) {
+    console.log("Looking for ID:", id); // Debugging
     let obj = document.getElementById(id);
+    console.log("Found element:", obj); // Debugging
+    
+    if (!obj) {
+        console.error("Error: Element with ID", id, "not found!");
+        return;  // Stop execution if null
+    }
+
     let range = end - start;
     let current = start;
     let increment = range / (duration / 20);
@@ -66,6 +74,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const closeQrPopup = document.getElementById("close-qr-popup");
+
+    if (!closeQrPopup) {
+        console.error("❌ Close button not found! Check your HTML.");
+    } else {
+        console.log("✅ Close button found!");
+    }
+});
+
+closeQrPopup.addEventListener("click", function () {
+    console.log("✅ Close button clicked!");
+});
+
+document.getElementById("qr-popup").style.display = "none";
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Run after page is fully loaded
+    animateValue("total-sales", 0, 1543, 3000);
+    animateValue("total-revenue", 0, 98230, 3000);
+    animateValue("total-customers", 0, 785, 3000);
+
+    const closeQrPopup = document.getElementById("close-qr-popup");
+    
+    if (!closeQrPopup) {
+        console.error("❌ Close button not found! Check your HTML.");
+    } else {
+        closeQrPopup.addEventListener("click", function () {
+            document.getElementById("qr-popup").style.display = "none";
+        });
+    }
+});
+
 
 
 
