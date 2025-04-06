@@ -1,11 +1,11 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Changed to a modern sans-serif font */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f7f9fc;
     color: #333;
-    line-height: 1.6; /* Increased line-height for better readability */
+    line-height: 1.6;
 }
 
 /* Header */
@@ -29,12 +29,12 @@ nav {
 
 /* Sales Analysis Logo */
 .logo {
-    font-family: 'Poppins', sans-serif; /* Use a clean, bold font for the logo */
+    font-family: 'Poppins', sans-serif;
     font-size: 28px;
     font-weight: 700;
     color: white;
-    letter-spacing: 1px; /* Add slight spacing for better appearance */
-    text-transform: uppercase; /* Making logo text uppercase for a professional look */
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Navigation Links */
@@ -54,7 +54,7 @@ nav {
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
     transition: 0.3s;
-    font-size: 16px; /* Adjusted font size for better balance */
+    font-size: 16px;
 }
 
 .nav-links li a:hover {
@@ -89,11 +89,12 @@ nav {
     text-align: center;
     padding: 60px 20px;
     background: #eef2f7;
+    position: relative;
 }
 
 .hero h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 40px; /* Larger font size for the main heading */
+    font-size: 40px;
     font-weight: 700;
     margin-bottom: 10px;
     color: #333;
@@ -166,7 +167,7 @@ nav {
     padding: 40px 20px;
     max-width: 1100px;
     margin: auto;
-    flex-wrap: wrap;  /* Allow items to wrap on smaller screens */
+    flex-wrap: wrap;
 }
 
 /* Stat Box */
@@ -177,18 +178,17 @@ nav {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
-    font-family: 'Roboto', sans-serif; /* Improved font */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: #333;
 }
 
 .stat-box:hover {
-    transform: scale(1.05); /* Slight zoom effect when hovering */
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Stat Box Titles */
 .stat-box h2 {
     color: #007BFF;
     font-size: 36px;
@@ -197,33 +197,22 @@ nav {
     font-weight: 700;
 }
 
-/* Stat Box Descriptions */
 .stat-box p {
     color: #555;
     font-size: 16px;
     margin-top: 10px;
 }
 
-/* Adding icons to stat boxes */
+/* Icons */
 .stat-box .icon {
     font-size: 50px;
     margin-bottom: 20px;
     color: #007BFF;
 }
 
-/* Specific styles for each stat box */
-.total-sales .icon {
-    color: #28a745; /* Green for sales */
-}
-
-.total-revenue .icon {
-    color: #ffc107; /* Yellow for revenue */
-}
-
-.customers .icon {
-    color: #dc3545; /* Red for customers */
-}
-
+.total-sales .icon { color: #28a745; }
+.total-revenue .icon { color: #ffc107; }
+.customers .icon { color: #dc3545; }
 
 /* Footer */
 footer {
@@ -231,9 +220,6 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
@@ -242,7 +228,6 @@ footer {
 .popup-active {
     overflow: hidden;
 }
-
 .popup-active::before {
     content: "";
     position: fixed;
@@ -261,15 +246,22 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    background: black;
-    color: white;
+    background: white;
     padding: 30px;
     border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-    display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    width: 350px;
+    text-align: center;
+    display: none;
+}
+
+/* Title inside popup */
+.login-popup h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Close button */
@@ -277,31 +269,46 @@ footer {
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
     cursor: pointer;
-}
-
-/* Labels for input fields */
-.login-popup label {
-    display: block;
-    text-align: left;
-    font-size: 14px;
-    margin: 10px 0 5px;
-    color: white;
 }
 
 /* Input fields */
 .login-popup input {
-    width: calc(100% - 20px);
+    width: 100%;
+    margin: 10px 0;
     padding: 10px;
-    border: 1px solid #555;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    background: #222;
-    color: white;
-    outline: none;
-    box-sizing: border-box;
 }
+
+/*remove this if any issue*/
+
+.login-popup input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ffffff !important;
+    color: #333333 !important;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+/*remove this if any issue*/
+
+
+
+/* Placeholder style (for modern browsers) */
+.login-popup input::placeholder {
+    color: #666 !important;
+}
+
+
 
 /* Login Button */
 .login-popup button {
@@ -312,10 +319,9 @@ footer {
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
     transition: 0.3s;
-    box-sizing: border-box;
 }
 
 .login-popup button:hover {
@@ -339,6 +345,9 @@ footer {
 .popup-footer a:hover {
     text-decoration: underline;
 }
+
+
+
 
 
 

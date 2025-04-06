@@ -5,30 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Analysis</title>
     <link rel="stylesheet" href="styles.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
-<div class="login-popup" id="login-popup">
-    <span class="close-popup" id="close-popup">&times;</span>
-    <h2>Login or Signup to Get Started</h2>
-    
-    <label for="email">Your Email</label>
-    <input type="email" id="email" placeholder="Enter your email">
-    
-    <label for="password">Your Password</label>
-    <input type="password" id="password" placeholder="Enter your password">
-    
-    <button>Login</button>
-    
-    <div class="popup-footer">
-        <a href="#">Forgot Password?</a>
-        <a href="#">Create Account</a>
-    </div>
-</div>
-
 <body>
-
     <header>
         <nav>
             <div class="logo">Sales Analysis</div>
@@ -37,23 +16,54 @@
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">Reports</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#" id="qr-button">QR Code</a></li>
-
+                 <li><a href="#" onclick="document.querySelector('.qr-popup').style.display='block'">QR Code</a></li>
+                 <button id="dark-toggle">🌙 Dark Mode</button>
             </ul>
         </nav>
     </header>
 
-    <div id="qr-popup" class="qr-popup">
-        <span id="close-qr-popup" class="close-qr">&times;</span>
-        <h2>Scan QR Code to View Reports</h2>
-        <img id="qr-image" src="IMG.sales/sales_QR_PNG.jpg" alt="QR Code">
-    </div> 
 
     <section class="hero">
         <h1>Unlock Insights, Boost Sales</h1>
         <p>Analyze trends and make data-driven decisions effortlessly.</p>
         <button id="cta-button">Get Started</button>
     </section>
+
+
+    <!-- Login Popup -->
+<div class="login-popup" id="login-popup">
+    <span class="close-popup" id="close-popup">&times;</span>
+    <h2>Sales</h2>
+    <p>Login or Signup to Get Started</p>
+
+
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" placeholder="Enter your email" class="login-input">
+
+    <label for="password">Your Password</label>
+    <input type="password" id="password" placeholder="Enter your password" class="login-input">
+
+    <button id="login-button">Login</button>
+
+    <div class="popup-footer">
+        <a href="#">Forgot Password?</a>
+        <a href="#">Create Account</a>
+    </div>
+</div>
+
+
+
+
+ <!-- QR Code Popup -->
+  <div class="qr-popup">
+    <span class="close-qr" onclick="document.querySelector('.qr-popup').style.display='none'">&times;</span>
+    <h2>Scan to Access</h2>
+    <img id="qr-image" src="IMG.sales/sales_QR_PNG.jpg" alt="QR Code">
+  </div>
+
+
+
 
     <!-- Sliding Image Section -->
     <section class="carousel-container">
@@ -69,46 +79,61 @@
         </div>
     </section>
 
-    <section class="dashboard">
-        <h2>Sales Dashboard</h2>
-        <iframe title="sales_insight_ETL" 
-            width="1140" 
-            height="541.25" 
-            src="https://app.powerbi.com/reportEmbed?reportId=7af160f9-0781-42ac-828a-30cd666acde2&autoAuth=true&ctid=053cbcff-aa58-4d20-87a3-575d830ae75b" 
-            frameborder="0" 
-            allowFullScreen="true">
-        </iframe>
-    </section>
-                                                                            
+    
+
     <div class="stats">
-        <!-- Total Sales -->
         <div class="stat-box total-sales">
-            <div class="icon"><i class="fas fa-chart-line"></i></div> <!-- Icon for Total Sales -->
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
             <h2>1,250</h2>
             <p>Total Sales</p>
         </div>
-    
-        <!-- Total Revenue -->
+
         <div class="stat-box total-revenue">
-            <div class="icon"><i class="fas fa-dollar-sign"></i></div> <!-- Icon for Total Revenue -->
+            <div class="icon"><i class="fas fa-dollar-sign"></i></div>
             <h2>$500,000</h2>
             <p>Total Revenue</p>
         </div>
-    
-        <!-- Customers -->
+
         <div class="stat-box customers">
-            <div class="icon"><i class="fas fa-users"></i></div> <!-- Icon for Customers -->
+            <div class="icon"><i class="fas fa-users"></i></div>
             <h2>3,000</h2>
             <p>Customers</p>
         </div>
     </div>
-    
 
     <footer>
         <p>&copy; 2025 Sales Analysis. All rights reserved.</p>
     </footer>
 
-    <script defer src="script.js"></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginPopup = document.getElementById("login-popup");
+            const getStartedBtn = document.getElementById("cta-button");
+            const closePopup = document.getElementById("close-popup");
+            const loginBtn = document.getElementById("login-button");
+
+            getStartedBtn.addEventListener("click", () => {
+                loginPopup.style.display = "block";
+            });
+
+            closePopup.addEventListener("click", () => {
+                loginPopup.style.display = "none";
+            });
+
+            loginBtn.addEventListener("click", () => {
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                if (email === "2022ce59f@sigce.edu.in" && password === "5August_04") {
+                    window.location.href = "https://app.powerbi.com/reportEmbed?reportId=7af160f9-0781-42ac-828a-30cd666acde2&autoAuth=true&ctid=053cbcff-aa58-4d20-87a3-575d830ae75b";
+                } else {
+                    alert("Invalid email or password. Try again.");
+                }
+            });
+        });
+    </script>
+
+
 
 </body>
 </html>
