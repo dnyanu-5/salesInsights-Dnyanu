@@ -6,6 +6,15 @@
     <title>Sales Analysis</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- In your HTML head -->
+<style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+
 </head>
 <body>
     <header>
@@ -26,6 +35,7 @@
         <h1>Unlock Insights, Boost Sales</h1>
         <p>Analyze trends and make data-driven decisions effortlessly.</p>
         <button id="cta-button">Get Started</button>
+
     </section>
 
 
@@ -134,6 +144,21 @@
         });
     </script>
 
+
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    reveals.forEach(el => observer.observe(el));
+  </script>
+  
 
 
 </body>
