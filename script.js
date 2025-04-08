@@ -213,6 +213,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
 
+  //remove this if any issues
+  function scrollToSection() {
+    document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' });
+  }
+  
+
 
 
 
